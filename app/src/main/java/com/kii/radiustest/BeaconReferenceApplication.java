@@ -3,10 +3,8 @@ package com.kii.radiustest;
 import java.util.Collection;
 
 import org.altbeacon.beacon.Beacon;
-import org.altbeacon.beacon.BeaconConsumer;
 import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.BeaconParser;
-import org.altbeacon.beacon.MonitorNotifier;
 import org.altbeacon.beacon.RangeNotifier;
 import org.altbeacon.beacon.Region;
 import org.altbeacon.beacon.powersave.BackgroundPowerSaver;
@@ -23,6 +21,7 @@ public class BeaconReferenceApplication extends Application implements Bootstrap
 	private Region mAllBeaconsRegion;
 	private MonitoringActivity mMonitoringActivity;
 	private RangingActivity mRangingActivity;
+
 	private BackgroundPowerSaver mBackgroundPowerSaver;
 	@SuppressWarnings("unused")
 	private RegionBootstrap mRegionBootstrap;
@@ -38,7 +37,6 @@ public class BeaconReferenceApplication extends Application implements Bootstrap
         mBeaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:0-3=4c000215,i:4-19,i:20-21,i:22-23,p:24-24"));
         mRegionBootstrap = new RegionBootstrap(this, mAllBeaconsRegion);
 
-	
         // By default the AndroidBeaconLibrary will only find AltBeacons.  If you wish to make it
         // find a different type of beacon, you must specify the byte layout for that beacon's
         // advertisement with a line like below.  The example shows how to find a beacon with the
